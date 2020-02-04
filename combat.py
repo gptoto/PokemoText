@@ -1,3 +1,4 @@
+import os
 import time
 import sys
 import pokemonCombat
@@ -109,6 +110,9 @@ class Combat:
                 delay_print("\n..." + Pokemon2.name + ' est K.O.')
                 break
 
+            # Retour au menu
+            exec(open("main.py").read())
+
             # Tour du 2e Pkmn
             print(f"Go {Pokemon2.name}!")
             for i, x in enumerate(Pokemon2.moves):
@@ -142,9 +146,15 @@ class Combat:
                 delay_print("\n..." + self.name + ' est K.O.')
                 break
 
+            # Retour au menu
+            exec(open("main.py").read())
+
         # Argent gagné
-        money = randint(5000)
+        money = randint(0,5000)
         delay_print(f"\nAdversaire vous paie ${money}.\n")
+
+        #Retour au menu
+        exec(open("main.py").read())
 
 if __name__ == '__main__':
 
@@ -155,3 +165,4 @@ if __name__ == '__main__':
     pkmn2 = pokemonCombat.getRandomPkmn()
     # Lance le combat avec les deux pokémons sélectionnés
     pkmn1.fight(pkmn2)
+

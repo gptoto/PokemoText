@@ -17,21 +17,12 @@ while True:
 
     if (choix == 1):
         exec(open("combat.py").read())
-        # Clear de la console
-        clear = lambda: os.system('cls')
-        clear()
     elif (choix == 2):
         exec(open("capture.py").read())
-        # Clear de la console
-        clear = lambda: os.system('cls')
-        clear()
     elif (choix == 3):
-        exec(open("magasin.py").read())
-        # Clear de la console
-        clear = lambda: os.system('cls')
-        clear()
+        exec(open("objectMagasin.py").read())
     else:
         while (choix > 2):
             print("Veuillez selectionner un choix valide.")
             choix = int(input("                                       Que faire ?"))
-            False
+            # Revenir au choix de fonctionnalité # A faire

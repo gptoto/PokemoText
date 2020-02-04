@@ -102,6 +102,9 @@ class Capture:
                     if Pokemon2.bars <= 0:
                         delay_print("\n..." + Pokemon2.name + ' est K.O.')
 
+                    # Retour au menu
+                    exec(open("main.py").read())
+
 
                     # Tour du pokémon sauvage
                     index = randint(0, 3)
@@ -125,6 +128,9 @@ class Capture:
                     # Test si K.O ou non
                     if self.bars <= 0:
                         delay_print("\n..." + self.name + ' est K.O.')
+
+                    # Retour au menu
+                    exec(open("main.py").read())
 
 
                 elif (choix==2):
@@ -162,9 +168,13 @@ class Capture:
                     if (randint(0,100) < capture):
                         delay_print("...")
                         print(f"Vous avez capturé {Pokemon2.name} !")
+
                         # Met fin au script
                         time.sleep(5)
-                        sys.exit()
+
+                        # Retour au menu
+                        exec(open("main.py").read())
+
                     else :
                         delay_print("...")
                         print("Le pokemon s'est échappé.")
@@ -172,6 +182,7 @@ class Capture:
                 else:
                     print("Veuillez sélectionner un choix valide.")
                     break
+
 
 if __name__ == '__main__':
 
