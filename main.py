@@ -24,5 +24,5 @@ while True:
     else:
         while (choix > 2):
             print("Veuillez selectionner un choix valide.")
-            choix = int(input("                                       Que faire ?"))
+            choix = int(input("                                       Que faire ?\n"))
             # Revenir au choix de fonctionnalité # A faire
