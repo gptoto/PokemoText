@@ -1,6 +1,7 @@
 import os
 import time
 import sys
+
 import pokemonCombat
 # Delay printing
 from random import randint, random, choice
@@ -96,7 +97,7 @@ class Combat:
             Pokemon2.bars -= self.attack
             Pokemon2.health = ""
 
-            # Add back bars plus defense boost
+            # Prise en compte de la défense
             for j in range(int(Pokemon2.bars+.1*Pokemon2.defense)):
                 Pokemon2.health += "="
 
@@ -105,7 +106,7 @@ class Combat:
             print(f"{Pokemon2.name}\t\tPV\t{Pokemon2.health}\n")
             time.sleep(.5)
 
-            # Check to see if Pokemon fainted
+            # Test si K.O ou non
             if Pokemon2.bars <= 0:
                 delay_print("\n..." + Pokemon2.name + ' est K.O.')
                 break
@@ -144,14 +145,16 @@ class Combat:
             # Test si K.O ou non
             if self.bars <= 0:
                 delay_print("\n..." + self.name + ' est K.O.')
-                break
-
-            # Retour au menu
-            exec(open("main.py").read())
+                # Retour au menu
+                exec(open("main.py").read())
 
         # Argent gagné
-        money = randint(0,5000)
-        delay_print(f"\nAdversaire vous paie ${money}.\n")
+        gain = randint(0,500)
+        delay_print(f"\nAdversaire vous paie ${gain}.\n")
+        # Ajout de l'argent au porte feuille du joueur
+        # Red.argent = Red.argent + gain
+        # print(objectMagasin.Red.argent)
+        time.sleep(5)
 
         #Retour au menu
         exec(open("main.py").read())
@@ -165,4 +168,3 @@ if __name__ == '__main__':
     pkmn2 = pokemonCombat.getRandomPkmn()
     # Lance le combat avec les deux pokémons sélectionnés
     pkmn1.fight(pkmn2)
-

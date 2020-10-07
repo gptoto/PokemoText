@@ -3,7 +3,6 @@ import sys
 import pokemonCapture
 from random import randint, random, choice
 
-
 def delay_print(s):
     # Affiche petit à petit un élément
     for c in s:
@@ -171,6 +170,7 @@ class Capture:
 
                         # Met fin au script
                         time.sleep(5)
+                        break
 
                         # Retour au menu
                         exec(open("main.py").read())
